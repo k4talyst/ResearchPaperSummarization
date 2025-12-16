@@ -34,14 +34,14 @@ Each section is summarized independently with configurable length constraints, h
 
 ## Project Structure
 
-├── app.py # Streamlit application
-├── pdf_utils.py # PDF text extraction
-├── section_parser.py # Section detection logic
-├── chunking.py # Token-aware text chunking
-├── hierarchical.py # Hierarchical summarization pipeline
-├── summarizer.py # Transformer-based summarization
-├── requirements.txt
-└── README.md
+- app.py # Streamlit application
+- pdf_utils.py # PDF text extraction
+- section_parser.py # Section detection logic
+- chunking.py # Token-aware text chunking
+- hierarchical.py # Hierarchical summarization pipeline
+- summarizer.py # Transformer-based summarization
+- requirements.txt
+- README.md
 
 
 ---
@@ -64,20 +64,23 @@ git clone https://github.com/<your-username>/<repo-name>.git
 cd <repo-name>
 ```
 2. Install dependencies:
+ ```bash  
    pip install -r requirements.txt
-
+```
 3. Download the spaCy English model:
+```bash
    python -m spacy download en_core_web_sm
-
-** Running the Application
-**
+```
+Running the Application
+```bash
    python -m streamlit run app.py
-   
+```
+
 Upload a research paper PDF and explore the generated summaries by section.
 
 ---
 
-**Why Not Just Use ChatGPT?**
+Why Not Just Use ChatGPT?
 
 General-purpose tools like ChatGPT are handy for quick exploration, but they operate as black boxes. This project was built to demonstrate how a controllable and explainable NLP pipeline can be designed specifically for academic documents.
 
@@ -88,27 +91,30 @@ Unlike prompt-based summarization, this system:
 - Can be automated and evaluated at scale
 These properties are important when working with research papers in academic, enterprise, or privacy-sensitive settings.
 
+---
 
-**Evaluation Notes
-**
+Evaluation Notes
+
 The quality of the summaries was evaluated qualitatively by checking:
 - Faithfulness to the original section content
 - Separation between methodology, results, and discussion
 - Robustness to noisy PDF formatting
-
 The project intentionally prioritizes structural correctness and factual preservation over stylistic fluency.
 
-**Limitations
-**
+---
+
+Limitations
 
 - Academic PDFs often contain OCR and layout noise
 - Tables and figures are not parsed semantically
 - The summarization model is not fine-tuned specifically on scientific corpora
 
-**Future Work
-**
+Despite these limitations, the system produces stable and reliable section-wise summaries across different papers.
+
+---
+
+Future Work
 - Fine-tuning on scientific datasets (e.g., arXiv or PubMed)
 - Table- and figure-aware summarization
 - Multi-paper literature review summarization
 - Support for long-context models such as LED or Long-T5
-Despite these limitations, the system produces stable and reliable section-wise summaries across different papers.
