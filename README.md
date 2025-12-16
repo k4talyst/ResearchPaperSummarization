@@ -40,7 +40,6 @@ Each section is summarized independently with configurable length constraints, h
 - chunking.py # Token-aware text chunking
 - hierarchical.py # Hierarchical summarization pipeline
 - summarizer.py # Transformer-based summarization
-- requirements.txt
 - README.md
 
 
