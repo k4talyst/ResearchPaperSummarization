@@ -1,7 +1,7 @@
 import streamlit as st
 from pdf_utils import extract_text_from_pdf
 from section_parser import split_into_sections
-from hierarchial import summarize_section  # fixed name
+from hierarchical import summarize_section  # fixed name
 
 st.set_page_config(layout="wide")
 st.title("📑 Section-wise Research Paper Summarizer")
@@ -22,3 +22,4 @@ if uploaded_pdf:
         with st.expander(section.upper()):
             summary = summarize_section(section, text)  # pass section name
             st.write(summary)
+
